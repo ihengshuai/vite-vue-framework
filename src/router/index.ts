@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router';
+import { useCommonStore } from '../store';
 
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_PUBLIC_PATH),
   routes: [
     {
@@ -19,3 +20,12 @@ export default createRouter({
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title ?? document.title;
+  const { setTitle } = useCommonStore();
+  setTitle(document.title);
+  next();
+});
+
+export default router;
