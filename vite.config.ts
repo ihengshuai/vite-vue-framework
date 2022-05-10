@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import autoprefixer from 'autoprefixer';
 import viteImgMin from 'vite-plugin-imagemin';
+import viteEslint from 'vite-plugin-eslint';
+import viteStyleLint from '@amatlash/vite-plugin-stylelint';
 import { decorateEnv, pathResolve, rootPath } from './build/util';
 
 const cssVariable = normalizePath(pathResolve('./src/styles/variable.scss'));
@@ -46,6 +48,14 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       port: VITE_PORT || 3000,
     },
     plugins: [
+      viteEslint({
+        exclude: ['node_modules'],
+        emitWarning: true,
+        emitError: true,
+      }),
+      viteStyleLint({
+        exclude: ['node_modules'],
+      }),
       vue(),
       vueJsx(),
       viteImgMin({

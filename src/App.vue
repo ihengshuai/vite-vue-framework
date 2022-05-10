@@ -13,7 +13,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/login">Login</router-link>
     </div>
-    <router-view />
+    <div class="routeview">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -52,9 +54,17 @@ console.log('global variable: ', name);
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: $theme-color;
+  text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: $theme-color;
+}
+
+.routeview {
+  position: relative;
+  top: 0;
+  z-index: 1;
+  height: 300px;
+  background-color: rgb(0 0 0 / 10%);
 }
 </style>

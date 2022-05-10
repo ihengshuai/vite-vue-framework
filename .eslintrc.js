@@ -1,3 +1,5 @@
+// https://eslint.org/
+
 module.exports = {
   env: {
     browser: true,
@@ -38,6 +40,7 @@ module.exports = {
     'no-cond-assign': ['error', 'always'],
     '@typescript-eslint/ban-ts-comment': 'error',
     '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-unused-vars': 1,
     'vue/require-default-prop': 'off',
     'vue/html-indent': ['error', 2],
     'vue/no-multiple-template-root': 0,
