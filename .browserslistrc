@@ -1,0 +1,11 @@
+# https://github.com/browserslist/browserslist
+
+
+[production]
+last 1 version
+> 1%
+Edge > 80
+not ie <= 11
+
+[development]
+Chrome > 40

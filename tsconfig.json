@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "noLib": false,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "strictFunctionTypes": true,
+    "types": ["vite/client"],
+    "removeComments": true,
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["src/*"],
+      "@assets": ["src/assets"],
+      "@components": ["src/components"],
+      "@hooks": ["src/hooks"],
+      "@utils": ["src/utils"],
+      "@api": ["src/api"],
+      "@directives": ["src/directives"],
+      "@constants": ["src/constants"],
+      "@styles": ["src/styles"],
+      "@workers": ["src/workers"],
+      "@plugins": ["src/plugins"],
+      "@interfaces": ["src/interfaces"],
+      "@enums": ["src/enums"],
+      "@router": ["src/router"],
+      "@store": ["src/store"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "types/**/*.ts",
+    "types/**/*.d.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
